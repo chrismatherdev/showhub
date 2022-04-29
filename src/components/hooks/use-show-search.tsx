@@ -1,12 +1,13 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 
 type SearchResults = Array<{
-  popularity: number;
+  title: string;
+  poster_path: string;
 }>;
 
 export function useShowSearch() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [shows, setShows] = useState<SearchResults>([]);
+  const [searchResults, setSearchResults] = useState<SearchResults>([]);
 
   const API_KEY = 'f5eb5d65f1d1f2716caa4b8b1c6136e9';
 
@@ -25,12 +26,13 @@ export function useShowSearch() {
 
           console.log(results);
 
-          setShows(
+          setSearchResults(
             results.map((result: any) => ({
-              popularity: result.popularity,
+              title: result.original_title || result.title,
+              poster_path: result.poster_path,
             })),
           );
-          console.log(shows);
+          console.log(searchResults);
         } catch (error) {
           console.error('Failed to retrieve shows:', error);
         }
@@ -41,7 +43,7 @@ export function useShowSearch() {
   return {
     searchTerm,
     setSearchTerm,
-    shows,
+    searchResults,
   };
 }
 

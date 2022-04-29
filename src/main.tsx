@@ -1,17 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import { Container } from "./components/styles/app-container.style";
-import App from "./App";
-import { ShowProvider } from "./components/hooks/use-show-search";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ShowProvider>
-      <Container>
-        <App />
-      </Container>
-    </ShowProvider>
+    <App />
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root'),
 );

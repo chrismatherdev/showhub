@@ -1,25 +1,28 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { FaBars } from "react-icons/fa";
-
-export const NavContainer = styled.div`
-  padding: 0 20px;
-`;
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { FaBars } from 'react-icons/fa';
 
 export const Nav = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1000px;
-  width: 4fr;
-  overflow: auto;
-  padding: 20px 0;
+  width: 1200px;
+  height: 80px;
+  padding: 0 25px;
   margin: 0 auto;
 `;
 
+export const NavWidth25 = styled.div`
+  width: 25%;
+`;
+
+export const NavWidth50 = styled.div`
+  width: 50%;
+  text-align: center;
+`;
+
 export const NavMenu = styled.div`
-  display: flex;
-  align-items: center;
+  /* align-items: center; */
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -30,14 +33,9 @@ export const NavLink = styled(Link)`
   padding: 1rem 2rem;
   cursor: pointer;
   color: white;
-  text-align: center;
   text-decoration: none;
   transition: all 0.3s ease-in;
   font-size: 0.9rem;
-
-  &:hover {
-    color: #7b7fda;
-  }
 `;
 
 export const LogoLink = styled(NavLink)`
@@ -89,5 +87,3 @@ export const NavbarLinkExtended = styled(Link)`
   text-decoration: none;
   margin: 10px;
 `;
-
-// export const TMDBLogoImage = styled.img``;

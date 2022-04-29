@@ -1,23 +1,25 @@
-import './index.css';
 import Navbar from './components/navbar';
-import Homepage from './components/homepage';
+import './index.css';
+import Hero from './components/hero';
+import HomepageShows from './components/homepage-shows';
 import Movies from './pages/movies';
-import { BrowserRouter as Router, Routes, Link, Route } from 'react-router-dom';
+import TvSeries from './pages/tv-series';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SearchResults from './components/search/search-results';
 
-function App() {
+export default function App() {
   return (
-    <>
-      <Router>
+    <Router>
+      <div className="app">
         <Navbar />
         <Routes>
-          <Route path="/" />
           <Route path="/movies" element={<Movies />} />
-          <Route path="/tv-series" />
+          <Route path="/tv-series" element={<TvSeries />} />
         </Routes>
-        <Homepage />
-      </Router>
-    </>
+        <Hero />
+        <HomepageShows />
+        <SearchResults />
+      </div>
+    </Router>
   );
 }
-
-export default App;

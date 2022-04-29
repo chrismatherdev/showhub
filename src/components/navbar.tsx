@@ -1,25 +1,32 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   Bars,
-  NavContainer,
   Nav,
   NavbarExtendedContainer,
   NavbarLinkExtended,
   NavMenu,
   NavLink,
+  NavWidth25,
+  NavWidth50,
   LogoLink,
   OpenLinksButton,
-} from "./styles/navbar-styles";
-import SearchShow from "./search-show";
+} from './styles/navbar-styles';
+import SearchShow from './search/search-show';
 
 function Navbar() {
   const [extendNavbar, setExtendNavbar] = useState(false);
 
   return (
-    <NavContainer>
-      <Nav>
-        <LogoLink to="/">ShowHub</LogoLink>
-        <Bars />
+    <Nav>
+      <NavWidth25>
+        <LogoLink to="/">
+          ShowHub
+        </LogoLink>
+      </NavWidth25>
+  
+      <Bars />
+
+      <NavWidth50>
         <NavMenu>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/movies">Movies</NavLink>
@@ -32,16 +39,20 @@ function Navbar() {
             {extendNavbar ? <>&#10005;</> : <> &#8801;</>}
           </OpenLinksButton>
         </NavMenu>
+      </NavWidth50>
+
+      <NavWidth25>
         <SearchShow />
-        {extendNavbar && (
-          <NavbarExtendedContainer>
-            <NavbarLinkExtended to="/">Home</NavbarLinkExtended>
-            <NavbarLinkExtended to="/movies">Movies</NavbarLinkExtended>
-            <NavbarLinkExtended to="/tv-series">TV Series</NavbarLinkExtended>
-          </NavbarExtendedContainer>
-        )}
-      </Nav>
-    </NavContainer>
+      </NavWidth25>
+
+      {extendNavbar && (
+        <NavbarExtendedContainer>
+          <NavbarLinkExtended to="/">Home</NavbarLinkExtended>
+          <NavbarLinkExtended to="/movies">Movies</NavbarLinkExtended>
+          <NavbarLinkExtended to="/tv-series">TV Series</NavbarLinkExtended>
+        </NavbarExtendedContainer>
+      )}
+    </Nav>
   );
 }
 
