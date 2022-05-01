@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SearchResults from './components/search/search-results';
 
 export default function App() {
+
   return (
     <Router>
       <div className="app">

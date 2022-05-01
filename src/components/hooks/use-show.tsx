@@ -5,6 +5,8 @@ import {
   TOP_RATED_MOVIES_URL,
   TOP_RATED_TV_URL,
   SEARCH_URL,
+  UPCOMING_MOVIES_URL,
+  UPCOMING_TV_URL
 } from '../../api/config';
 import Axios from 'axios';
 
@@ -20,6 +22,8 @@ export function useShow() {
   const [popularTvShows, setPopularTvShows] = useState<Shows>([]);
   const [topRatedMovies, setTopRatedMovies] = useState<Shows>([]);
   const [topRatedTvShows, setTopRatedTvShows] = useState<Shows>([]);
+  const [upcomingMovies, setUpcomingMovies] = useState<Shows>([]);
+  const [upcomingTv, setUpcomingTv] = useState<Shows>([]);
 
   const search = (e: any) => {
     e.preventDefault();
@@ -71,12 +75,33 @@ export function useShow() {
     getTopRatedTvShows();
   }, []);
 
+  // UPCOMING MOVIES
+  async function getUpcomingMovies() {
+    const upcomingMovieData = await Axios.get(UPCOMING_MOVIES_URL);
+    setUpcomingMovies(upcomingMovieData.data.results);
+  }
+  useEffect(() => {
+    getUpcomingMovies();
+  }, []);
+
+  // UPCOMING TV
+  async function getUpcomingTv() {
+    const upcomingTvData = await Axios.get(UPCOMING_TV_URL);
+    setUpcomingTv(upcomingTvData.data.results);
+  }
+  useEffect(() => {
+    getUpcomingTv();
+  }, []);
+
+
   return {
     shows,
     popularMovies,
     popularTvShows,
     topRatedMovies,
     topRatedTvShows,
+    upcomingMovies,
+    upcomingTv,
     searchTerm,
     search,
     setSearchTerm,

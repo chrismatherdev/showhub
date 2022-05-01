@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 import { Input } from '../styles/search-show.style';
 import { useShowSearch } from '../hooks/use-show-search';
 import { useDebouncedCallback } from 'use-debounce';

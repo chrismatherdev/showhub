@@ -1,6 +1,5 @@
 import { IMAGE_PATH } from '.././api/config';
-import { ShowCardContainer } from './styles/show-card-styles';
-import { Shows } from './hooks/use-show';
+import { ShowCardContainer, ShowCardTitle } from "./styles/show-card-style";
 import '../index.css';
 
 function ShowCard({ show }) {
@@ -14,7 +13,7 @@ function ShowCard({ show }) {
             alt="Movie Poster"
           />
         ) : null}
-        <p className="movie-title">{show.original_title || show.original_name}</p>
+        <ShowCardTitle>{show.original_title || show.original_name}</ShowCardTitle>
       </div>
     </ShowCardContainer>
   );

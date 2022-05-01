@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Bars,
   Nav,
@@ -10,7 +10,7 @@ import {
   NavWidth50,
   LogoLink,
   OpenLinksButton,
-} from './styles/navbar-styles';
+} from './styles/navbar-style';
 import SearchShow from './search/search-show';
 
 function Navbar() {
@@ -23,7 +23,7 @@ function Navbar() {
           ShowHub
         </LogoLink>
       </NavWidth25>
-  
+
       <Bars />
 
       <NavWidth50>
