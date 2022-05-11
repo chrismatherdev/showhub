@@ -14,30 +14,26 @@ export function useShowSearch() {
       if (searchTerm) {
         try {
           const response = await fetch(
-            `https://api.themoviedb.org/3/search/multi?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=en-US&query=${searchTerm}&page=1&include_adult=false`,
-            {
-              method: 'GET',
-            },
+            `https://api.themoviedb.org/3/search/multi?api_key=${
+              import.meta.env.VITE_TMDB_API_KEY
+            }&language=en-US&query=${searchTerm}&page=1&include_adult=false`,
           );
 
           const { results } = await response.json();
 
-          console.log(results);
-
           setSearchResults(
-            results.map((result: any) => ({
+            results.map((result) => ({
               title: result.original_title || result.title,
               poster_path: result.poster_path,
             })),
           );
           console.log(searchResults);
         } catch (error) {
-          console.error('Failed to retrieve shows:', error);
+          console.error(error);
         }
       }
     })();
   }, [searchTerm]);
-
 
   return {
     searchTerm,

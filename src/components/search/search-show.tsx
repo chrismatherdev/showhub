@@ -1,6 +1,7 @@
+import React from 'react';
 import { ChangeEvent } from 'react';
-import { Input } from '../styles/search-show.style';
-import { useShowSearch } from '../hooks/use-show-search';
+import { Input, SearchBox, SearchWrapper } from './search-show.style';
+import { useShowSearch } from '../../hooks/use-show-search';
 import { useDebouncedCallback } from 'use-debounce';
 
 function SearchShow() {
@@ -10,7 +11,13 @@ function SearchShow() {
     setSearchTerm(event.target.value);
   }, 500);
 
-  return <Input placeholder="Search..." onChange={debouncedCallback} />;
+  return (
+    <SearchWrapper>
+      <SearchBox>
+        <Input placeholder="Search your favourite shows..." onChange={debouncedCallback} />
+      </SearchBox>
+    </SearchWrapper>
+  );
 }
 
 export default SearchShow;

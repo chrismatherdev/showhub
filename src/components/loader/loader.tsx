@@ -1,4 +1,5 @@
-import { StyledLoader } from './styles/loader-styles';
+import React from 'react';
+import { StyledLoader } from './loader-styles';
 
 function Loader() {
   return (

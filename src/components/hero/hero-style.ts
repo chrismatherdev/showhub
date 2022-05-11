@@ -8,11 +8,7 @@ export const HeroSectionStyle = styled.section`
   width: 1200px;
 `;
 
-export const HeroContainer = styled.div`
-  border: 2px solid black;
-`;
-
-export const HeroImage = styled.div`
+export const HeroImage = styled.img`
   width: 100%;
   height: 100%;
 `;

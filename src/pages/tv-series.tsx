@@ -1,29 +1,29 @@
-import { useShow } from "../../src/components/hooks/use-show";
-import Carousel from "../components/carousel";
-import ShowCard from "../components/show-card";
-import { GridLayout } from "../components/styles/grid.style";
-import { CarouselHeader } from "../../src/components/styles/carousel.style";
-import { HomepageShowsContainer } from "../components/styles/homepage-shows-style";
+import React from 'react';
+import { useShow } from '../hooks/use-show';
+import Carousel from '../components/carousel/carousel';
+import ShowCard from '../components/show-card/show-card';
+import { GridLayout } from './grid.style';
+import { CarouselHeader } from '../components/carousel/carousel.style';
+import { HomepageShowsContainer } from '../components/homepage-shows/homepage-shows-style';
 
 function TvSeries() {
   const { popularTvShows, upcomingTv } = useShow();
   return (
     <HomepageShowsContainer>
       <Carousel
-        title={'Upcoming TV Series'}
+        title={'On TV Now'}
         data={upcomingTv.map((show) => {
           return <ShowCard show={show} />;
         })}
       />
-      <CarouselHeader>All Movies</CarouselHeader>
+      <CarouselHeader>All TV Series</CarouselHeader>
       <GridLayout>
-
         {popularTvShows.map((show) => {
           return <ShowCard show={show} />;
         })}
       </GridLayout>
     </HomepageShowsContainer>
-  )
+  );
 }
 
 export default TvSeries;

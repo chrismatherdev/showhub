@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FaBars } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const Nav = styled.div`
   display: flex;
@@ -10,6 +11,11 @@ export const Nav = styled.div`
   height: 80px;
   padding: 0 25px;
   margin: 0 auto;
+`;
+
+export const NavBackground = styled.div`
+  width: 100%;
+  background-color: #2d3748;
 `;
 
 export const NavWidth25 = styled.div`
@@ -23,24 +29,39 @@ export const NavWidth50 = styled.div`
 
 export const NavMenu = styled.div`
   /* align-items: center; */
-
   @media screen and (max-width: 768px) {
     display: none;
   }
 `;
 
 export const NavLink = styled(Link)`
-  padding: 1rem 2rem;
+  padding: 12px;
   cursor: pointer;
   color: white;
+  margin-right: 10px;
+  background-color: #2d3748;
+  border-radius: 5px;
+  font-weight: bold;
   text-decoration: none;
   transition: all 0.3s ease-in;
   font-size: 0.9rem;
+  &:hover {
+    color: lightblue;
+  }
 `;
 
-export const LogoLink = styled(NavLink)`
+export const LogoLink = styled(Link)`
   font-size: 40px;
   font-weight: bold;
+  text-decoration: none;
+  color: white;
+`;
+
+export const StyledShowIcon = styled(FontAwesomeIcon)`
+  color: white;
+  font-size: 2rem;
+  margin-right: 10px;
+  cursor: pointer;
 `;
 
 export const Bars = styled(FaBars)`

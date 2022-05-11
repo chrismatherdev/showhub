@@ -1,30 +1,29 @@
-import { useShow } from "../../src/components/hooks/use-show";
-import Carousel from "../components/carousel";
-import ShowCard from "../components/show-card";
-import { GridLayout } from "../components/styles/grid.style";
-import { CarouselHeader } from "../components/styles/carousel.style";
-import { HomepageShowsContainer } from "../components/styles/homepage-shows-style";
+import React from 'react';
+import { useShow } from '../hooks/use-show';
+import Carousel from '../components/carousel/carousel';
+import ShowCard from '../components/show-card/show-card';
+import { GridLayout } from './grid.style';
+import { CarouselHeader } from '../components/carousel/carousel.style';
+import { PagesContainer } from './pages-container.style';
 
 function Movies() {
   const { popularMovies, upcomingMovies } = useShow();
   return (
-    <HomepageShowsContainer>
+    <PagesContainer>
       <Carousel
-        title={'Upcoming Movies'}
+        title={'In Theatres Now'}
         data={upcomingMovies.map((show) => {
-          return <ShowCard show={show} />;
+          return <ShowCard key={show.id} show={show} />;
         })}
-
       />
       <CarouselHeader>All Movies</CarouselHeader>
       <GridLayout>
-
         {popularMovies.map((show) => {
-          return <ShowCard show={show} />;
+          return <ShowCard key={show.id} show={show} />;
         })}
       </GridLayout>
-    </HomepageShowsContainer>
-  )
+    </PagesContainer>
+  );
 }
 
 export default Movies;

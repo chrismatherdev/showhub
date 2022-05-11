@@ -6,13 +6,14 @@ import {
   TOP_RATED_TV_URL,
   SEARCH_URL,
   UPCOMING_MOVIES_URL,
-  UPCOMING_TV_URL
-} from '../../api/config';
+  UPCOMING_TV_URL,
+} from '../api/config';
 import Axios from 'axios';
 
 export type Shows = Array<{
   poster_path: string;
   original_title: string;
+  vote_average: number;
 }>;
 
 export function useShow() {
@@ -92,7 +93,6 @@ export function useShow() {
   useEffect(() => {
     getUpcomingTv();
   }, []);
-
 
   return {
     shows,
