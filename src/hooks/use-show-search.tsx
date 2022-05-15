@@ -22,17 +22,19 @@ export function useShowSearch() {
           const { results } = await response.json();
 
           setSearchResults(
-            results.map((result) => ({
-              title: result.original_title || result.title,
-              poster_path: result.poster_path,
-            })),
+            results.map(
+              (result: { original_title: string; title: string; poster_path: string }) => ({
+                title: result.original_title || result.title,
+                poster_path: result.poster_path,
+              }),
+            ),
           );
-          console.log(searchResults);
+          console.log('Search Results', searchResults);
         } catch (error) {
           console.error(error);
         }
       }
-    })();
+    })(); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchTerm]);
 
   return {

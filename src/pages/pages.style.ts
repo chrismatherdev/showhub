@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const PagesContainer = styled.div`
+  margin: auto;
+  width: 1200px;
+  margin-bottom: 35px;
+`;
+
 export const GridContainer = styled.div`
   padding: 5px;
 `;

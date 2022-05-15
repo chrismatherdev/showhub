@@ -5,7 +5,7 @@ function Footer() {
   return (
     <FooterContainer>
       <FooterLogo>ShowHub</FooterLogo>
-      <FooterTMDB src={'../../docs/tmdb_logo.svg'} alt="TMDB Logo"></FooterTMDB>
+      <FooterTMDB src={'../../assets/tmdb_logo.svg'} alt="TMDB Logo"></FooterTMDB>
     </FooterContainer>
   );
 }

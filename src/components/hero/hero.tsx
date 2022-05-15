@@ -4,7 +4,7 @@ import { HeroSectionStyle, HeroImage } from './hero-style';
 function Hero() {
   return (
     <HeroSectionStyle>
-      <HeroImage src={'../../docs/Web_Banner_869133.jpg'} alt="hero" />
+      <HeroImage src={'../../assets/Web_Banner_869133.jpg'} alt="hero" />
     </HeroSectionStyle>
   );
 }

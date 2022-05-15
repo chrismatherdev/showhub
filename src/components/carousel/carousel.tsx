@@ -24,11 +24,7 @@ function Carousel(props: CarouselProps) {
     <>
       <HomepageShowsHeight25>
         <CarouselHeader>{props.title}</CarouselHeader>
-        <MotionCarousel
-          marginBottom={props.marginBottom}
-          ref={carousel}
-          whileTap={{ cursor: 'grabbing' }}
-        >
+        <MotionCarousel ref={carousel} whileTap={{ cursor: 'grabbing' }}>
           <MotionInnerCarousel drag="x" dragConstraints={{ right: 0, left: -width }}>
             {props.data}
           </MotionInnerCarousel>

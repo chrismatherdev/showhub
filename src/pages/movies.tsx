@@ -2,9 +2,8 @@ import React from 'react';
 import { useShow } from '../hooks/use-show';
 import Carousel from '../components/carousel/carousel';
 import ShowCard from '../components/show-card/show-card';
-import { GridLayout } from './grid.style';
+import { GridLayout, PagesContainer } from './pages.style';
 import { CarouselHeader } from '../components/carousel/carousel.style';
-import { PagesContainer } from './pages-container.style';
 
 function Movies() {
   const { popularMovies, upcomingMovies } = useShow();

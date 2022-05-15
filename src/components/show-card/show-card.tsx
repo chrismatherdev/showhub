@@ -1,5 +1,4 @@
 import React from 'react';
-import { IMAGE_PATH } from '../../api/config';
 import {
   ShowCardContainer,
   ShowCardTitle,
@@ -10,7 +9,8 @@ import {
 } from './show-card-style';
 import { Shows } from '../../hooks/use-show';
 
-function ShowCard({ show }) {
+function ShowCard({ show }: Shows) {
+  const IMAGE_PATH = 'https://image.tmdb.org/t/p/original';
   return (
     <ShowCardContainer>
       <Card>

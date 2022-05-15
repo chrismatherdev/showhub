@@ -9,6 +9,7 @@ function SearchShow() {
 
   const debouncedCallback = useDebouncedCallback((event: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
+    console.log('debounce');
   }, 500);
 
   return (

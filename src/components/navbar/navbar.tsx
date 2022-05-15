@@ -15,13 +15,10 @@ import {
   StyledShowIcon,
 } from './navbar-style';
 import SearchShow from '../search/search-show';
-import { useShow } from '../../hooks/use-show';
 import { faClapperboard } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
   const [extendNavbar, setExtendNavbar] = useState(false);
-
-  const { search } = useShow();
 
   return (
     <NavBackground>
@@ -51,7 +48,8 @@ function Navbar() {
         </NavWidth50>
 
         <NavWidth25>
-          <SearchShow search={search} />
+          <SearchShow />
+          {/* <SearchShowTest /> */}
         </NavWidth25>
 
         {extendNavbar && (
