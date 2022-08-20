@@ -14,9 +14,12 @@ function SearchShow() {
 
   return (
     <SearchWrapper>
+      {/* <SearchForm onSubmit={search}> */}
       <SearchBox>
-        <Input placeholder="Search your favourite shows..." onChange={debouncedCallback} />
+        <Input placeholder="Search your favourite shows..." onChange={debouncedCallback}></Input>
+        {/* <SearchButton type="submit">Search</SearchButton> */}
       </SearchBox>
+      {/* </SearchForm> */}
     </SearchWrapper>
   );
 }

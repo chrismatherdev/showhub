@@ -7,6 +7,7 @@ import { CarouselHeader } from '../components/carousel/carousel.style';
 
 function TvSeries() {
   const { popularTvShows, upcomingTv } = useShow();
+
   return (
     <PagesContainer>
       <Carousel

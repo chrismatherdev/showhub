@@ -1,12 +1,21 @@
 import React from 'react';
-import { FooterContainer, FooterTMDB, FooterLogo } from './footer.style';
+import { FooterContainer, FooterTMDB, FooterLogo, FooterLink } from './footer.style';
+import { Gradient } from '../hero/hero-style';
 
 function Footer() {
   return (
-    <FooterContainer>
-      <FooterLogo>ShowHub</FooterLogo>
-      <FooterTMDB src={'../../assets/tmdb_logo.svg'} alt="TMDB Logo"></FooterTMDB>
-    </FooterContainer>
+    <>
+      <Gradient />
+      <FooterContainer>
+        <FooterLogo>ShowHub</FooterLogo>
+        <FooterLink
+          target="_blank"
+          href="https://developers.themoviedb.org/3/getting-started/introduction"
+        >
+          <FooterTMDB src={'../../assets/tmdb_logo.svg'} alt="TMDB Logo"></FooterTMDB>
+        </FooterLink>
+      </FooterContainer>
+    </>
   );
 }
 

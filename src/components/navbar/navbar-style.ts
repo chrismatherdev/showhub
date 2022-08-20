@@ -1,36 +1,35 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { FaBars } from 'react-icons/fa';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export const Nav = styled.div`
+export const StyledNav = styled.nav`
+  font-size: 80%;
+  padding: 1rem;
+  @media screen and (min-width: 850px) {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+`;
+
+export const StyledUl = styled.ul`
+  list-style-type: none;
   display: flex;
+  flex-flow: nowrap;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  width: 1200px;
-  height: 80px;
-  padding: 0 25px;
-  margin: 0 auto;
+  gap: 2rem;
 `;
 
-export const NavBackground = styled.div`
-  width: 100%;
-  background-color: #2d3748;
-`;
-
-export const NavWidth25 = styled.div`
-  width: 25%;
-`;
-
-export const NavWidth50 = styled.div`
-  width: 50%;
-  text-align: center;
-`;
-
-export const NavMenu = styled.div`
-  /* align-items: center; */
-  @media screen and (max-width: 768px) {
-    display: none;
+export const StyledLi = styled.li`
+  &:first-child {
+    flex-basis: 100%;
+    text-align: center;
+    @media screen and (min-width: 850px) {
+      flex-basis: auto;
+      text-align: left;
+      margin-right: auto;
+    }
   }
 `;
 
@@ -38,73 +37,31 @@ export const NavLink = styled(Link)`
   padding: 12px;
   cursor: pointer;
   color: white;
+  display: block;
   margin-right: 10px;
   background-color: #2d3748;
   border-radius: 5px;
   font-weight: bold;
   text-decoration: none;
-  transition: all 0.3s ease-in;
+  transition: all 0.1s ease-in;
   font-size: 0.9rem;
   &:hover {
-    color: lightblue;
+    background-color: #1a202c;
   }
 `;
 
 export const LogoLink = styled(Link)`
   font-size: 40px;
+  flex-basis: 100%;
+  color: black;
+  display: block;
   font-weight: bold;
   text-decoration: none;
-  color: white;
 `;
 
-export const StyledShowIcon = styled(FontAwesomeIcon)`
-  color: white;
+export const ShowIcon = styled(FontAwesomeIcon)`
+  color: black;
   font-size: 2rem;
   margin-right: 10px;
   cursor: pointer;
-`;
-
-export const Bars = styled(FaBars)`
-  display: none;
-  color: white;
-
-  @media screen and (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 75%);
-    font-size: 2rem;
-    cursor: pointer;
-  }
-`;
-
-export const OpenLinksButton = styled.button`
-  width: 70px;
-  height: 50px;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 45px;
-  cursor: pointer;
-  @media (min-width: 700px) {
-    display: none;
-  }
-`;
-
-export const NavbarExtendedContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  @media (min-width: 700px) {
-    display: none;
-  }
-`;
-
-export const NavbarLinkExtended = styled(Link)`
-  color: white;
-  font-size: x-large;
-  font-family: Arial, Helvetica, sans-serif;
-  text-decoration: none;
-  margin: 10px;
 `;

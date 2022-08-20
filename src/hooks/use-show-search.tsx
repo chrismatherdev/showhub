@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 type SearchResults = Array<{
   title: string;
   poster_path: string;
+  vote_average: number;
 }>;
 
 export function useShowSearch() {
@@ -11,7 +12,7 @@ export function useShowSearch() {
 
   useEffect(() => {
     (async function fetchShows() {
-      if (searchTerm) {
+      if (searchTerm.length > 0) {
         try {
           const response = await fetch(
             `https://api.themoviedb.org/3/search/multi?api_key=${
@@ -23,9 +24,15 @@ export function useShowSearch() {
 
           setSearchResults(
             results.map(
-              (result: { original_title: string; title: string; poster_path: string }) => ({
-                title: result.original_title || result.title,
+              (result: {
+                original_title: string;
+                title: string;
+                poster_path: string;
+                vote_average: number;
+              }) => ({
+                // title: result.original_title || result.title,
                 poster_path: result.poster_path,
+                vote_average: result.vote_average,
               }),
             ),
           );
@@ -33,6 +40,8 @@ export function useShowSearch() {
         } catch (error) {
           console.error(error);
         }
+      } else {
+        return [];
       }
     })(); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchTerm]);

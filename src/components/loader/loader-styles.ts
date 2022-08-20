@@ -4,6 +4,8 @@ export const StyledLoader = styled.svg`
   animation: rotate 1s linear infinite;
   margin: 40px;
   width: 50px;
+  flex: 1;
+  color: blue;
   height: 50px;
   display: block;
   margin: auto;

@@ -1,14 +1,28 @@
-import { createGlobalStyle } from 'styled-components';
+import * as styled from 'styled-components';
 
-export default createGlobalStyle`
-  * {
-font-family: system-ui, sans-serif;
-box-sizing: border-box;
-margin: 0;
-padding: 0;
+export default styled.createGlobalStyle`
+  html {
+    box-sizing: border-box;
   }
-  
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
   body {
-    background-color: #1A202C;
+    padding: 0;
+    margin: 0;
+    font-family: Oxygen, 'sans serif';
+    background-color: white;
+    color: black;
+    font-size: 1rem;
   }
-  `;
+
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+  }
+`;

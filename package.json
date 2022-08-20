@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "format": "eslint src --fix && prettier . --write",
+    "format": "eslint src --fix && prettier . --write **/*",
     "lint": "eslint src",
     "build": "tsc && vite build",
     "preview": "vite preview"

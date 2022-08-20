@@ -7,9 +7,11 @@ export const ShowCardContainer = styled.div`
 
 export const Card = styled.div`
   width: 100%;
-  background-color: #2d3748;
+  border: 1px solid black;
+  border-radius: 3px;
   vertical-align: bottom;
-  min-height: 50vh;
+  padding: 5px;
+  max-height: 50vh;
 `;
 
 export const CardCover = styled.img`
@@ -17,6 +19,7 @@ export const CardCover = styled.img`
   width: 100%;
   height: 100%;
   pointer-events: none;
+  min-height: 300px;
 `;
 
 export const CardInfo = styled.div`
@@ -24,17 +27,18 @@ export const CardInfo = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 3px;
+  max-height: 60px;
 `;
 
 export const ShowCardTitle = styled.p`
-  color: white;
+  color: black;
   font-weight: bold;
 `;
 
 export const ShowCardRating = styled.h3`
-  color: #ecc94b;
+  color: black;
   font-weight: bold;
-  background-color: #1a202c;
   padding: 0.25rem 0.5rem;
-  border-radius: 10rem;
+  border: 1px solid black;
+  border-radius: inherit;
 `;

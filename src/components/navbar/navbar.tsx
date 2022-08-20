@@ -1,66 +1,34 @@
 import React from 'react';
-import { useState } from 'react';
-import {
-  Bars,
-  Nav,
-  NavbarExtendedContainer,
-  NavbarLinkExtended,
-  NavMenu,
-  NavBackground,
-  NavLink,
-  NavWidth25,
-  NavWidth50,
-  LogoLink,
-  OpenLinksButton,
-  StyledShowIcon,
-} from './navbar-style';
+import { NavLink, LogoLink, ShowIcon, StyledNav, StyledUl, StyledLi } from './navbar-style';
 import SearchShow from '../search/search-show';
 import { faClapperboard } from '@fortawesome/free-solid-svg-icons';
+import { Gradient } from '../hero/hero-style';
 
 function Navbar() {
-  const [extendNavbar, setExtendNavbar] = useState(false);
-
   return (
-    <NavBackground>
-      <Nav>
-        <NavWidth25>
-          <LogoLink to="/">
-            <StyledShowIcon icon={faClapperboard} />
-            ShowHub
-          </LogoLink>
-        </NavWidth25>
-
-        <Bars />
-
-        <NavWidth50>
-          <NavMenu>
+    <>
+      <StyledNav>
+        <StyledUl>
+          <StyledLi>
+            <LogoLink to="/">
+              <ShowIcon icon={faClapperboard} />
+              ShowHub
+            </LogoLink>
+          </StyledLi>
+          <StyledLi>
             <NavLink to="/">Home</NavLink>
+          </StyledLi>
+          <StyledLi>
             <NavLink to="/movies">Movies</NavLink>
+          </StyledLi>
+          <StyledLi>
             <NavLink to="/tv-series">TV Series</NavLink>
-            <OpenLinksButton
-              onClick={() => {
-                setExtendNavbar((curr) => !curr);
-              }}
-            >
-              {extendNavbar ? <>&#10005;</> : <> &#8801;</>}
-            </OpenLinksButton>
-          </NavMenu>
-        </NavWidth50>
-
-        <NavWidth25>
+          </StyledLi>
           <SearchShow />
-          {/* <SearchShowTest /> */}
-        </NavWidth25>
-
-        {extendNavbar && (
-          <NavbarExtendedContainer>
-            <NavbarLinkExtended to="/">Home</NavbarLinkExtended>
-            <NavbarLinkExtended to="/movies">Movies</NavbarLinkExtended>
-            <NavbarLinkExtended to="/tv-series">TV Series</NavbarLinkExtended>
-          </NavbarExtendedContainer>
-        )}
-      </Nav>
-    </NavBackground>
+        </StyledUl>
+      </StyledNav>
+      <Gradient />
+    </>
   );
 }
 

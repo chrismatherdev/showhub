@@ -1,11 +1,15 @@
 import React from 'react';
-import { HeroSectionStyle, HeroImage } from './hero-style';
+import { HeroSection, HeroText, HeroHeader } from './hero-style';
 
 function Hero() {
   return (
-    <HeroSectionStyle>
-      <HeroImage src={'../../assets/Web_Banner_869133.jpg'} alt="hero" />
-    </HeroSectionStyle>
+    <>
+      <HeroSection>
+        <HeroText>Welcome to ShowHub</HeroText>
+        <HeroHeader>Discover movies and TV Series</HeroHeader>
+        <HeroText>View a wide variety of shows including trending, popular and top rated.</HeroText>
+      </HeroSection>
+    </>
   );
 }
 
