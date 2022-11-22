@@ -2,13 +2,14 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+export const StyledHeader = styled.header`
+  padding: 1rem;
+  background-color: #171923;
+`;
+
 export const StyledNav = styled.nav`
   font-size: 80%;
-  padding: 1rem;
-  @media screen and (min-width: 850px) {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+  width: 100%;
 `;
 
 export const StyledUl = styled.ul`
@@ -39,8 +40,6 @@ export const NavLink = styled(Link)`
   color: white;
   display: block;
   margin-right: 10px;
-  background-color: #2d3748;
-  border-radius: 5px;
   font-weight: bold;
   text-decoration: none;
   transition: all 0.1s ease-in;
@@ -51,17 +50,16 @@ export const NavLink = styled(Link)`
 `;
 
 export const LogoLink = styled(Link)`
-  font-size: 40px;
+  font-size: 30px;
   flex-basis: 100%;
-  color: black;
   display: block;
+  color: white;
   font-weight: bold;
   text-decoration: none;
 `;
 
 export const ShowIcon = styled(FontAwesomeIcon)`
-  color: black;
-  font-size: 2rem;
+  font-size: 25px;
   margin-right: 10px;
   cursor: pointer;
 `;

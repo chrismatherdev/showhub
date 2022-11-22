@@ -16,7 +16,6 @@ export const ShowCarousel = styled.div`
 `;
 
 export const CarouselHeader = styled.h2`
-  color: black;
   padding-bottom: 15px;
   margin-top: 15px;
 `;

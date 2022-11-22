@@ -1,18 +1,8 @@
 import styled from 'styled-components';
 
-export const Gradient = styled.div`
-  background: linear-gradient(
-    90deg,
-    rgba(9, 9, 121, 1) 0%,
-    rgba(2, 0, 36, 1) 37%,
-    rgba(0, 212, 255, 1) 62%
-  );
-  height: 2px;
-`;
-
 export const HeroSection = styled.section`
-  padding: 4rem 1rem 7rem 1rem;
-  max-width: 1200px;
+  padding: 5rem 1rem 5rem 4rem;
+  background-color: #1a202c;
   margin: 0 auto;
 `;
 
@@ -22,5 +12,5 @@ export const HeroText = styled.p`
 `;
 
 export const HeroHeader = styled.h2`
-  font-size: 3rem;
+  font-size: 2.5rem;
 `;

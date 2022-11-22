@@ -2,18 +2,19 @@ import styled from 'styled-components';
 
 export const FooterContainer = styled.footer`
   text-align: center;
-  padding: 4rem 0;
+  padding: 5rem 0;
+  background-color: #1a202c;
 `;
 
 export const FooterTMDB = styled.img`
-  width: 20%;
-  background-color: black;
+  width: 15%;
 `;
 
 export const FooterLogo = styled.h1`
-  font-size: 50px;
-  color: black;
-  padding: 10px;
+  font-size: 2rem;
+  @media screen and (max-width: 850px) {
+    font-size: 35px;
+  }
 `;
 
 export const FooterLink = styled.a`

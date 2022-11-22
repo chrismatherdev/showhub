@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const HomepageShowsContainer = styled.div`
   margin: auto;
-  padding: 10px;
+  background-color: #171923;
+  padding: 1rem;
   width: 100%;
-  margin-bottom: 35px;
 `;
 
 export const HomepageShowsHeight25 = styled.div`
