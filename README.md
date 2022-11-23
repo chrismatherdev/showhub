@@ -3,7 +3,7 @@
 Movies and TV Series catalogue that displays current, trending and top rated shows.
 
 ## Screenshot
-![Screenshot](assets/screenshot.png)
+![Screenshot](assets/showhub-screenshot.png)
 
 ## Features
 
