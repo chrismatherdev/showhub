@@ -9,11 +9,11 @@ import {
 } from './show-card-style';
 import { Shows } from '../../hooks/use-show';
 
-function ShowCard({ show }: Shows) {
+function ShowCard({ show }: Shows, { size }) {
   const IMAGE_PATH = 'https://image.tmdb.org/t/p/original';
   return (
     <ShowCardContainer>
-      <Card>
+      <Card size={size}>
         {show.poster_path ? (
           <CardCover src={`${IMAGE_PATH}${show.poster_path}`} alt="Movie Poster" />
         ) : null}

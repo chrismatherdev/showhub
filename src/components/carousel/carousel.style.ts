@@ -18,6 +18,7 @@ export const ShowCarousel = styled.div`
 export const CarouselHeader = styled.h2`
   padding-bottom: 15px;
   margin-top: 15px;
+  padding: 8px;
 `;
 
 export const MotionCarousel = styled(motion.div)`

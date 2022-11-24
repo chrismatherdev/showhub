@@ -1,17 +1,20 @@
 import styled from 'styled-components';
 
+export interface CardProps {
+  size: string;
+}
+
 export const ShowCardContainer = styled.div`
   width: 100%;
   margin-right: 12.5px;
 `;
 
-export const Card = styled.div`
+export const Card = styled.div<CardProps>`
   width: 100%;
   border-radius: 10px;
   background-color: #1a202c;
   vertical-align: bottom;
   padding: 5px;
-  max-height: 50vh;
 `;
 
 export const CardCover = styled.img`
