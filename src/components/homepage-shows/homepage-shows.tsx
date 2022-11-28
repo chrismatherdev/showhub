@@ -5,33 +5,33 @@ import { HomepageShowsContainer } from './homepage-shows-style';
 import ShowCard from '../show-card/show-card';
 
 function HomepageShow() {
-  const { popularMovies, topRatedMovies, popularTvShows, topRatedTvShows } = useShow();
+  const { shows } = useShow();
 
   return (
     <>
       <HomepageShowsContainer>
         <Carousel
           title={'Trending Movies'}
-          data={popularMovies.map((show) => {
+          data={shows[0]?.map((show) => {
             return <ShowCard key={show.id} show={show} />;
           })}
         />
 
         <Carousel
           title={'Top Rated Movies'}
-          data={topRatedMovies.map((show) => {
+          data={shows[2]?.map((show) => {
             return <ShowCard key={show.id} show={show} />;
           })}
         />
         <Carousel
           title={'Popular TV Series'}
-          data={popularTvShows.map((show) => {
+          data={shows[1]?.map((show) => {
             return <ShowCard key={show.id} show={show} />;
           })}
         />
         <Carousel
           title={'Top Rated TV Series'}
-          data={topRatedTvShows.map((show) => {
+          data={shows[3]?.map((show) => {
             return <ShowCard key={show.id} show={show} />;
           })}
         />

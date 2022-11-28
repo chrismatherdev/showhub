@@ -2,31 +2,30 @@ import React from 'react';
 import { useShow } from '../hooks/use-show';
 import Carousel from '../components/carousel/carousel';
 import ShowCard from '../components/show-card/show-card';
-import { GridLayout, PagesContainer } from './pages.style';
 import { CarouselHeader } from '../components/carousel/carousel.style';
-import { PagesBanner, PagesHeader } from './pages.style';
+import { Styled as S } from './pages.style';
 
 function Movies() {
-  const { popularMovies, upcomingMovies } = useShow();
+  const { shows } = useShow();
   return (
     <>
-      <PagesBanner>
-        <PagesHeader>Explore Movies...</PagesHeader>
-      </PagesBanner>
-      <PagesContainer>
+      <S.Hero>
+        <S.Header>Explore Movies...</S.Header>
+      </S.Hero>
+      <S.PagesContainer>
         <Carousel
           title={'In Theatres Now'}
-          data={upcomingMovies.map((show) => {
+          data={shows[4]?.map((show) => {
             return <ShowCard key={show.id} show={show} />;
           })}
         />
         <CarouselHeader>All Movies</CarouselHeader>
-        <GridLayout>
-          {popularMovies.map((show) => {
+        <S.GridLayout>
+          {shows[0]?.map((show) => {
             return <ShowCard key={show.id} show={show} />;
           })}
-        </GridLayout>
-      </PagesContainer>
+        </S.GridLayout>
+      </S.PagesContainer>
     </>
   );
 }

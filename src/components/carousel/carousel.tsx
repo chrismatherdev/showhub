@@ -6,11 +6,11 @@ import {
   MotionCarousel,
   MotionInnerCarousel,
 } from './carousel.style';
-import { Shows } from '../../hooks/use-show';
+import { ShowType } from '../../hooks/use-show';
 
 type CarouselProps = {
   title: string;
-  data: Shows;
+  data: ShowType;
   marginBottom: string;
 };
 

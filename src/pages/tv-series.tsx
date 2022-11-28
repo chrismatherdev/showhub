@@ -2,33 +2,31 @@ import React from 'react';
 import { useShow } from '../hooks/use-show';
 import Carousel from '../components/carousel/carousel';
 import ShowCard from '../components/show-card/show-card';
-import { GridLayout, PagesContainer } from './pages.style';
-import { PagesBanner, PagesHeader } from './pages.style';
 import { CarouselHeader } from '../components/carousel/carousel.style';
+import { Styled as S } from './pages.style';
 
 function TvSeries() {
-  const { popularTvShows, upcomingTv } = useShow();
+  const { shows } = useShow();
 
   return (
     <>
-      <PagesBanner>
-        <PagesHeader>Explore TV Series...</PagesHeader>
-      </PagesBanner>
-      <PagesContainer>
+      <S.Hero>
+        <S.Header>Explore TV Series...</S.Header>
+      </S.Hero>
+      <S.Container>
         <Carousel
           title={'On TV Now'}
-          data={upcomingTv.map((show) => {
-            console.log(typeof show.id, 'Show ID');
+          data={shows[5]?.map((show) => {
             return <ShowCard key={show.id} show={show} />;
           })}
         />
         <CarouselHeader>All TV Series</CarouselHeader>
-        <GridLayout>
-          {popularTvShows.map((show) => {
+        <S.Grid>
+          {shows[1]?.map((show) => {
             return <ShowCard key={show.id} show={show} />;
           })}
-        </GridLayout>
-      </PagesContainer>
+        </S.Grid>
+      </S.Container>
     </>
   );
 }
