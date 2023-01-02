@@ -7,9 +7,9 @@ import {
   ShowCardRating,
   CardInfo,
 } from './show-card-style';
-import { Shows } from '../../hooks/use-show';
+import { ShowType } from '../../hooks/use-show';
 
-function ShowCard({ show }: Shows, { size }) {
+function ShowCard({ show }: ShowType, { size }) {
   const IMAGE_PATH = 'https://image.tmdb.org/t/p/original';
   return (
     <ShowCardContainer>

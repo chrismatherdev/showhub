@@ -12,7 +12,7 @@ function Movies() {
       <S.Hero>
         <S.Header>Explore Movies...</S.Header>
       </S.Hero>
-      <S.PagesContainer>
+      <S.Container>
         <Carousel
           title={'In Theatres Now'}
           data={shows[4]?.map((show) => {
@@ -20,12 +20,12 @@ function Movies() {
           })}
         />
         <CarouselHeader>All Movies</CarouselHeader>
-        <S.GridLayout>
+        <S.Grid>
           {shows[0]?.map((show) => {
             return <ShowCard key={show.id} show={show} />;
           })}
-        </S.GridLayout>
-      </S.PagesContainer>
+        </S.Grid>
+      </S.Container>
     </>
   );
 }

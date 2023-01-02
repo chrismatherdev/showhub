@@ -5,6 +5,7 @@ export type ShowType = Array<{
   data: {
     results: [
       {
+        id: number;
         poster_path: string;
         original_title: string;
         vote_average: string;
@@ -14,7 +15,7 @@ export type ShowType = Array<{
 }>;
 
 export function useShow() {
-  const [shows, setShows] = useState<ShowType[]>([]);
+  const [shows, setShows] = useState<ShowType>([]);
   const [loading, setLoading] = useState(false);
 
   const BASE_URL = 'https://api.themoviedb.org/3/';
@@ -31,6 +32,7 @@ export function useShow() {
   async function fetchCurrentShows() {
     setLoading(true);
     axios.all(ROUTES.map((route) => axios.get(route))).then((info) => {
+      console.log(info, 'INFO');
       const showResponse = [];
 
       for (let i = 0; i < info.length; i++) {
@@ -42,6 +44,8 @@ export function useShow() {
       setLoading(false);
     });
   }
+
+  console.log(JSON.stringify(shows), 'SHOWS');
 
   useEffect(() => {
     fetchCurrentShows();

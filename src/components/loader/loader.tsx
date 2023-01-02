@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyledLoader } from './loader-styles';
+import { Styled as S } from './loader-style';
 
 function Loader() {
   return (
-    <StyledLoader viewBox="0 0 50 50">
+    <S.Loader viewBox="0 0 50 50">
       <circle className="path" cx="25" cy="25" r="20" fill="none" strokeWidth="2" />
-    </StyledLoader>
+    </S.Loader>
   );
 }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { useRef, useState, useEffect } from 'react';
 import {
   CarouselStyle,
@@ -6,6 +6,7 @@ import {
   MotionCarousel,
   MotionInnerCarousel,
 } from './carousel.style';
+import { useMotionValue } from 'framer-motion';
 import { ShowType } from '../../hooks/use-show';
 
 type CarouselProps = {
@@ -16,11 +17,17 @@ type CarouselProps = {
 
 function Carousel(props: CarouselProps) {
   const [width, setWidth] = useState<number>(0);
+  const widthTest = useMotionValue(0);
 
-  const carousel = useRef<Ref<HTMLDivElement | undefined>>(null);
+  const carousel = useRef<any>(null);
+  const carouselTest = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth);
+  }, []);
+
+  useEffect(() => {
+    widthTest.set(carouselTest.current?.offsetWidth || 0);
   }, []);
 
   return (

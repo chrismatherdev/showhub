@@ -1,39 +1,31 @@
 import React from 'react';
-import {
-  NavLink,
-  LogoLink,
-  ShowIcon,
-  StyledNav,
-  StyledUl,
-  StyledHeader,
-  StyledLi,
-} from './navbar-style';
+import { Styled as S } from './navbar-style';
 import { faClapperboard } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
   return (
     <>
-      <StyledHeader>
-        <StyledNav>
-          <StyledUl>
-            <StyledLi>
-              <LogoLink to="/">
-                <ShowIcon icon={faClapperboard} />
+      <S.Header>
+        <S.Nav>
+          <S.UnorderedList>
+            <S.ListItem>
+              <S.LogoLink to="/">
+                <S.Icon icon={faClapperboard} />
                 ShowHub
-              </LogoLink>
-            </StyledLi>
-            <StyledLi>
-              <NavLink to="/">Home</NavLink>
-            </StyledLi>
-            <StyledLi>
-              <NavLink to="/movies">Movies</NavLink>
-            </StyledLi>
-            <StyledLi>
-              <NavLink to="/tv-series">TV Series</NavLink>
-            </StyledLi>
-          </StyledUl>
-        </StyledNav>
-      </StyledHeader>
+              </S.LogoLink>
+            </S.ListItem>
+            <S.ListItem>
+              <S.Link to="/">Home</S.Link>
+            </S.ListItem>
+            <S.ListItem>
+              <S.Link to="/movies">Movies</S.Link>
+            </S.ListItem>
+            <S.ListItem>
+              <S.Link to="/tv-series">TV Series</S.Link>
+            </S.ListItem>
+          </S.UnorderedList>
+        </S.Nav>
+      </S.Header>
     </>
   );
 }
