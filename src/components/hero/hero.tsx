@@ -1,14 +1,14 @@
 import React from 'react';
-import { HeroSection, HeroText, HeroHeader } from './hero-style';
+import { Styled as S } from './hero-style';
 
 function Hero() {
   return (
     <>
-      <HeroSection>
-        <HeroText>Welcome to ShowHub</HeroText>
-        <HeroHeader>Discover movies and TV Series</HeroHeader>
-        <HeroText>View a wide variety of shows including trending, popular and top rated.</HeroText>
-      </HeroSection>
+      <S.Hero>
+        <S.Text>Welcome to ShowHub</S.Text>
+        <S.Header>Discover movies and TV Series</S.Header>
+        <S.Text>View a wide variety of shows including trending, popular and top rated.</S.Text>
+      </S.Hero>
     </>
   );
 }

@@ -1,21 +1,36 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-export type ShowType = Array<{
+export type ShowAPIResponseType = {
   data: {
-    results: [
-      {
-        id: number;
-        poster_path: string;
-        original_title: string;
-        vote_average: string;
-      },
-    ];
+    results: ShowResultType[];
   };
-}>;
+  status: number;
+  statusText: string;
+  headers: object;
+  config: object;
+  id: number;
+};
+
+export type ShowResultType = {
+  backdrop_path?: string;
+  genre_ids?: number[];
+  id: number;
+  original_language?: string;
+  original_name?: string;
+  original_title?: string;
+  overview?: string;
+  popularity?: number;
+  poster_path?: string;
+  release_date?: string;
+  title?: string;
+  video?: boolean;
+  vote_average?: number;
+  vote_count?: number;
+};
 
 export function useShow() {
-  const [shows, setShows] = useState<ShowType>([]);
+  const [shows, setShows] = useState<ShowResultType[]>([]);
   const [loading, setLoading] = useState(false);
 
   const BASE_URL = 'https://api.themoviedb.org/3/';
@@ -32,7 +47,6 @@ export function useShow() {
   async function fetchCurrentShows() {
     setLoading(true);
     axios.all(ROUTES.map((route) => axios.get(route))).then((info) => {
-      console.log(info, 'INFO');
       const showResponse = [];
 
       for (let i = 0; i < info.length; i++) {
@@ -44,8 +58,6 @@ export function useShow() {
       setLoading(false);
     });
   }
-
-  console.log(JSON.stringify(shows), 'SHOWS');
 
   useEffect(() => {
     fetchCurrentShows();
