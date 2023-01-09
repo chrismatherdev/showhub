@@ -15,6 +15,7 @@ export default styled.createGlobalStyle`
     padding: 0;
     margin: 0;
     font-family: Oxygen, 'sans serif';
+    background-color: #1a202c;
     color: white;
     font-size: 1rem;
   }

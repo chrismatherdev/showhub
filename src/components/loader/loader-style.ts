@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Styled = {
   Loader: styled.svg`
     animation: rotate 1s linear infinite;
-    margin: 40px;
+    margin: auto;
     width: 50px;
     flex: 1;
     color: blue;
@@ -36,5 +36,12 @@ export const Styled = {
         stroke-dashoffset: -124;
       }
     }
+  `,
+
+  Container: styled.div`
+    display: flex;
+    align-items: center;
+    background-color: #1a202c;
+    height: 100vh;
   `,
 };

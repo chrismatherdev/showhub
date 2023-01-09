@@ -12,7 +12,8 @@ export type ShowAPIResponseType = {
   id: number;
 };
 
-export type ShowResultType = {
+export type ShowResultType = Array<{
+  show: ShowAPIResponseType[];
   backdrop_path?: string;
   genre_ids?: number[];
   id: number;
@@ -27,7 +28,7 @@ export type ShowResultType = {
   video?: boolean;
   vote_average?: number;
   vote_count?: number;
-};
+}>;
 
 export function useShow() {
   const [shows, setShows] = useState<ShowResultType[]>([]);
@@ -55,6 +56,7 @@ export function useShow() {
       }
 
       setShows(showResponse);
+      console.log(showResponse, 'showResponse');
       setLoading(false);
     });
   }

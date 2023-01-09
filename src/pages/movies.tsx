@@ -19,7 +19,7 @@ function Movies() {
             return <ShowCard key={show.id} show={show} />;
           })}
         />
-        <CarouselHeader>All Movies</CarouselHeader>
+        <S.Header>All Movies</S.Header>
         <S.Grid>
           {shows[0]?.map((show) => {
             return <ShowCard key={show.id} show={show} />;

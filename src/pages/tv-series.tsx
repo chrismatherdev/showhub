@@ -2,7 +2,6 @@ import React from 'react';
 import { useShow } from '../hooks/use-show';
 import Carousel from '../components/carousel/carousel';
 import ShowCard from '../components/show-card/show-card';
-import { CarouselHeader } from '../components/carousel/carousel.style';
 import { Styled as S } from './pages.style';
 
 function TvSeries() {
@@ -20,7 +19,7 @@ function TvSeries() {
             return <ShowCard key={show.id} show={show} />;
           })}
         />
-        <CarouselHeader>All TV Series</CarouselHeader>
+        <S.Header>All TV Series</S.Header>
         <S.Grid>
           {shows[1]?.map((show) => {
             return <ShowCard key={show.id} show={show} />;
