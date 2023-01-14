@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export type ShowAPIResponseType = {
   data: {
-    results: ShowResultType[];
+    results: ShowResultType;
   };
   status: number;
   statusText: string;
@@ -13,10 +13,9 @@ export type ShowAPIResponseType = {
 };
 
 export type ShowResultType = Array<{
-  show: ShowAPIResponseType[];
   backdrop_path?: string;
   genre_ids?: number[];
-  id: number;
+  id?: number;
   original_language?: string;
   original_name?: string;
   original_title?: string;
@@ -56,7 +55,6 @@ export function useShow() {
       }
 
       setShows(showResponse);
-      console.log(showResponse, 'showResponse');
       setLoading(false);
     });
   }

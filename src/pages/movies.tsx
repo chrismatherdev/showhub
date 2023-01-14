@@ -2,7 +2,6 @@ import React from 'react';
 import { useShow } from '../hooks/use-show';
 import Carousel from '../components/carousel/carousel';
 import ShowCard from '../components/show-card/show-card';
-import { CarouselHeader } from '../components/carousel/carousel.style';
 import { Styled as S } from './pages.style';
 
 function Movies() {

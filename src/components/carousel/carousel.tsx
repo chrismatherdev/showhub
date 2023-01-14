@@ -10,11 +10,13 @@ type CarouselProps = {
 
 function Carousel(props: CarouselProps) {
   const [width, setWidth] = useState<number>(0);
-  const carousel = useRef<any>(null);
+  const carousel = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth);
-  }, []);
+    if (carousel.current) {
+      setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+    }
+  }, [carousel]);
 
   return (
     <>

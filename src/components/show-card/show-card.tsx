@@ -2,7 +2,13 @@ import React from 'react';
 import { ShowResultType } from '../../hooks/use-show';
 import { Styled as S } from './show-card-style';
 
-function ShowCard({ show }, { size }: { size: string }) {
+type Props = {
+  show: ShowResultType;
+  size: string;
+};
+
+function ShowCard({ show, size }: Props) {
+  console.log(show, 'show');
   const IMAGE_PATH = 'https://image.tmdb.org/t/p/original';
   return (
     <S.Container>
